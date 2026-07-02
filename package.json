@@ -4,7 +4,7 @@
   "private": true,
   "description": "Farthood — meme coin launching on Robinhood Chain via NOXA",
   "scripts": {
-    "start": "node server.js",
+    "start": "node scripts/dev-server.js",
     "build": "node scripts/build-public.js",
     "vercel-build": "npm run build"
   },

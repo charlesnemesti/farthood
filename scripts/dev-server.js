@@ -4,7 +4,8 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3456;
-const DATA_DIR = path.join(__dirname, 'data');
+const root = path.join(__dirname, '..');
+const DATA_DIR = path.join(root, 'data');
 const DATA_FILE = path.join(DATA_DIR, 'fart-count.json');
 
 function readCount() {
@@ -22,7 +23,7 @@ function writeCount(count) {
 }
 
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(root));
 
 app.get('/api/farts', (_req, res) => {
     res.json({ count: readCount() });
