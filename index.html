@@ -63,7 +63,7 @@
                             <div class="text-sm sm:text-base font-mono truncate">
                                 <span class="text-white/70 mr-2">Contract:</span>
                                 <span id="contractAddress" class="text-robinhood truncate">
-                                    Available 5 min after launch
+                                    0xac636ae9e35c79b1f44467518136396a79def3bd
                                 </span>
                             </div>
                             <button onclick="copyContractAddress()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border bg-background shadow-sm hover:text-accent-foreground h-8 rounded-md px-3 text-xs border-white text-white hover:bg-white/20">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="terminal-frame p-4 border-white">
                         <p class="text-white/70 text-sm">> Status:</p>
-                        <p class="text-robinhood text-lg" id="launch-status">Pre-launch — contract reveals 5 min after go-live</p>
+                        <p class="text-robinhood text-lg" id="launch-status">Live on Robinhood Chain</p>
                     </div>
                 </div>
             </div>
@@ -180,8 +180,8 @@
                         🔍
                     </div>
                     <h3 class="text-white text-xl mb-4">Block Explorer</h3>
-                    <p class="text-white/70 text-sm text-center mb-4">Verify contract after launch</p>
-                    <a href="https://robinhoodchain.blockscout.com/" target="_blank" rel="noopener noreferrer"
+                    <p class="text-white/70 text-sm text-center mb-4">View contract on Blockscout</p>
+                    <a id="explorerLink" href="https://robinhoodchain.blockscout.com/address/0xac636ae9e35c79b1f44467518136396a79def3bd" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border bg-background shadow-sm hover:text-accent-foreground h-8 rounded-md px-3 text-xs border-white text-white hover:bg-white/20 w-full">
                         View Explorer
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -196,7 +196,7 @@
                 </div>
             </div>
             <div class="mt-8 text-center text-white/70 text-sm">
-                <p>&gt; Contract address published 5 minutes after launch on NOXA.</p>
+                <p id="contractNote">&gt; CA: 0xac636ae9e35c79b1f44467518136396a79def3bd</p>
             </div>
         </div>
     </section>

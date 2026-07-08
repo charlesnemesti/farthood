@@ -1,17 +1,39 @@
-function copyContractAddress() {
-    alert('Contract address will be available 5 minutes after launch on NOXA.');
-}
-
+const CONTRACT_ADDRESS = '0xac636ae9e35c79b1f44467518136396a79def3bd';
 const LAUNCH_URL = 'https://fun.noxa.fi/robinhood';
+const EXPLORER_URL = `https://robinhoodchain.blockscout.com/address/${CONTRACT_ADDRESS}`;
+
+function copyContractAddress() {
+    navigator.clipboard.writeText(CONTRACT_ADDRESS)
+        .then(() => {
+            alert('Contract address copied to clipboard!');
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy contract address.');
+        });
+}
 
 function updateLaunchStatus() {
     const statusEl = document.getElementById('launch-status');
     const contractEl = document.getElementById('contractAddress');
+    const explorerLink = document.getElementById('explorerLink');
+    const contractNote = document.getElementById('contractNote');
 
-    if (!statusEl || !contractEl) return;
+    if (contractEl) {
+        contractEl.textContent = CONTRACT_ADDRESS;
+    }
 
-    statusEl.textContent = 'Pre-launch — contract reveals 5 min after go-live';
-    contractEl.textContent = 'Available 5 min after launch';
+    if (statusEl) {
+        statusEl.textContent = 'Live on Robinhood Chain';
+    }
+
+    if (explorerLink) {
+        explorerLink.href = EXPLORER_URL;
+    }
+
+    if (contractNote) {
+        contractNote.textContent = `> CA: ${CONTRACT_ADDRESS}`;
+    }
 }
 
 function updateFartCountDisplay(count) {
